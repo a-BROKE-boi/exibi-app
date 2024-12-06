@@ -2,7 +2,7 @@
 const nextConfig = {
    reactStrictMode:true,
     images: {
-        domains: ['bit.ly']
+        domains: ['images.metmuseum.org']
     }
 };
 
