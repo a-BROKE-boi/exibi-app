@@ -37,10 +37,10 @@ const Logo = () => {
     <>
       <Link href="/" style={{ display: showButton ? "none" : "block" }}>
         <Image
-          src="/images/logo.png"
+          src="https://cdn-icons-png.flaticon.com/512/212/212808.png"
           alt="Logo"
-          width={width < 1024 ? "150" : "250"}
-          height={width < 1024 ? "45" : "74"}
+          width="70"
+          height="70"
           className="relative"
         />
       </Link>

@@ -2,7 +2,18 @@
 const nextConfig = {
    reactStrictMode:true,
     images: {
-        domains: ['images.metmuseum.org']
+        domains: ['images.metmuseum.org'],
+        remotePatterns: [
+            {
+              protocol: 'https',
+              hostname: 'cdn-icons-png.flaticon.com'
+            },
+            // {
+            //   protocol: 'https',
+            //   hostname: 'hydeparkwinterwonderland.com'
+            // },
+           
+          ]
     }
 };
 
