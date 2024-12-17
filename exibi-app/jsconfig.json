@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "paths": {
-      "@/*": ["./*"]
-    }
+      "typeRoots": ["node_modules/@types"],
+      "module": "esnext",
+      "moduleResolution": "bundler",
+      "baseUrl": "./",
+      "paths": {
+        "@/components/*": ["components/*"],
+   },
   }
 }
