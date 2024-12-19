@@ -1,50 +1,34 @@
-'use client'
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-
-
-export default function gallery () {
+export default async function gallery () {
+  for (let i = 1; i < 3; i++) { 
+  const data = await fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${i}`)
+  const posts = await data.json()
 
     return (<>
-        <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-    <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
-      <FetchMetMusium />
-     
-    </div>
-  </div>
+    <p>{JSON.stringify(posts)}</p>
+    
+   
+  
   </>
     )
     
 }
+}
+// export default async function Page() {
+//   const data = await fetch('https://api.vercel.app/blog')
+//   const posts = await data.json()
+//   return (
+//     <ul>
+//       {posts.map((post) => (
+//         <li key={post.id}>{post.title}</li>
+//       ))}
+//     </ul>
+//   )
+// }
 // iterate over 10 at a time we could only iterate over the fetch function 10 calls at a time.
 
 
 // trying to figure out the json
-function FetchMetMusium() {
-  const [jsonData, setJsonData] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('https://collectionapi.metmuseum.org/public/collection/v1/objects');
-      const data = await response.json();
-      setJsonData(data);
-    };
-
-    fetchData();
-  }, []);
-
-  return (
-    <ul>
-      {Object.keys(jsonData).forEach(key => {(
-        <li key={item.objectID}>{item.primaryImageSmall}</li>
-)})}
-    </ul>
-  );
-}
-
-
-
 
 
 
